@@ -62,5 +62,9 @@ def test_calculate_winner():
         ['c', 'b', 'a']
     ]
 
-    assert calculate_winner(votes) == 'b'
+    # assert calculate_winner(votes) == 'b'
+    election = RankedChoiceElection(votes).run()
+    assert election.winner == 'b'
+    print(election.report)
+
 
